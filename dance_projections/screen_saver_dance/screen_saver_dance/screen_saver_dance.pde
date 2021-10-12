@@ -1,3 +1,6 @@
+//stagger floating up photos
+//individual photo zoom
+//after 2 mins floating up pictues
 
 ArrayList<Image> images;
 
