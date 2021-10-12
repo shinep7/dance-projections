@@ -13,6 +13,14 @@ void setup() {
   images.add(new Image("img6.jpeg"));
   images.add(new Image("img7.jpeg"));
   images.add(new Image("img8.jpeg"));
+  images.add(new Image("8th.jpeg"));
+  images.add(new Image("8th(1).jpeg"));
+  images.add(new Image("9th.jpeg"));
+  images.add(new Image("9th(1).jpeg"));
+  images.add(new Image("10th.jpeg"));
+  images.add(new Image("10th(1).jpeg"));
+  images.add(new Image("11th.png"));
+
 
 }
 
