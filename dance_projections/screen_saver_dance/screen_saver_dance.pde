@@ -42,12 +42,11 @@ class Image {
   PVector position;
   PVector direction;
   PImage img;
-  int s = second();
 
   Image(String filename) {
-    position = new PVector(random(0, width), random(height, height*3/2), random(0, 5));
+    position = new PVector(random(0, width), random(height, height*5), random(0, 5));
     direction = new PVector(vy*0, -vy, vy*0);
-    img = loadImage(filename + s);
+    img = loadImage(filename);
   }
 
   void display() {
@@ -59,10 +58,10 @@ class Image {
    beginShape();
    texture(img);
    
-   vertex(-100, -100, 0, 0, 0);
-   vertex(100, -100, 0, 1, 0);
-   vertex(100, 100, 0, 1, 1);
-   vertex(-100, 100, 0, 0, 1);
+   vertex(-200, -200, 0, 0, 0);
+   vertex(200, -200, 0, 1, 0);
+   vertex(200, 200, 0, 1, 1);
+   vertex(-200, 200, 0, 0, 1);
    
    endShape();
    popMatrix();
