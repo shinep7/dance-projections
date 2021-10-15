@@ -42,11 +42,12 @@ class Image {
   PVector position;
   PVector direction;
   PImage img;
+  int s = second();
 
   Image(String filename) {
     position = new PVector(random(0, width), random(height, height*3/2), random(0, 5));
     direction = new PVector(vy*0, -vy, vy*0);
-    img = loadImage(filename);
+    img = loadImage(filename + s);
   }
 
   void display() {
