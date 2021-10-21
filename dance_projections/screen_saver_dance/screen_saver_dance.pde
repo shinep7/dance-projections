@@ -5,6 +5,7 @@
 
 ArrayList<Image> images;
 int gameState = 0;
+//Image image1;
 
 void setup() {
   fullScreen(P3D);
@@ -29,22 +30,41 @@ void setup() {
     Image currentimg = images.get(i);
     currentimg.position = new PVector(random(0, width), random(height + i * bandWidth, height + (i + 1) * bandWidth), random(0, 5));
   }
+  
+  //image1 = new Image(img);
 }
 
 void draw() {
   background(0);
 
-  for (Image i : images) {
+  
     if (gameState == 0) {
+      drawGameState0();
+    } else if (gameState == 1) {
+      drawGameState1();
+    } else if (gameState == 2) {
+      //image1.ending();
+    }
+  
+}
+
+
+void drawGameState0()
+{
+  for (Image i : images) {
       i.display();
       i.move();
-    } else if (gameState == 1) {
-      i.zoom();
-    } else if (gameState == 2) {
-      i.ending();
-    }
-  }
+      }
 }
+
+void drawGameState1()
+{
+  Image first = images.get(0);
+      first.position.x = width/2;
+      first.position.y = height/2;
+      first.display();
+}
+
 
 void keyPressed() {
   if (keyCode == ' ') {
@@ -54,7 +74,7 @@ void keyPressed() {
   }
 }
 
-class Image {
+/*class Image {
 
   float vy = 0.7;
   PVector position;
@@ -69,21 +89,21 @@ class Image {
   }
 
   void mousePressed() {
-    if (vy == 0.7) {
-      vy = 3;
+    if (image1.vy == 0.7) {
+      image1.vy = 3;
     } else {
-      vy = 0.7;
+      image1.vy = 0.7;
     }
   }
 
   void display() {
     pushMatrix();
-    translate(position.x, position.y, position.z);
+    translate(image1.position.x, image1.position.y, image1.position.z);
 
     textureMode(NORMAL);
 
     beginShape();
-    texture(img);
+    texture(image1.img);
 
     vertex(-200, -200, 0, 0, 0);
     vertex(200, -200, 0, 1, 0);
@@ -96,10 +116,13 @@ class Image {
   }
 
   void move() {
-    position.add(direction);
+    image1.position.add(image1.direction);
   }
+  */
 
-  void zoom() {
+
+
+  /*void zoom() {
   }
 
   void ending() {
@@ -107,12 +130,12 @@ class Image {
     //change speed of the final images so that they're faster
 
     pushMatrix();
-    translate(position.x, position.y, position.z);
+    translate(image1.position.x, image1.position.y, image1.position.z);
 
     textureMode(NORMAL);
 
     beginShape();
-    texture(img);
+    texture(image1.img);
 
     vertex(-200, -200, 0, 0, 0);
     vertex(200, -200, 0, 1, 0);
@@ -123,4 +146,4 @@ class Image {
 
     popMatrix();
   }
-}
+  */
