@@ -73,12 +73,6 @@ void keyPressed() {
 }
 
 
-  void move() {
-    image1.position.add(image1.direction);
-  }
-  */
-
-
 
   /*void zoom() {
   }
