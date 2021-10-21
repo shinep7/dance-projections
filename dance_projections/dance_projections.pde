@@ -120,7 +120,7 @@ void draw(){
     gameState = 0;
   }
   
-  position.x = position.x + (velocity.x * direction.x);
+ position.x = position.x + (velocity.x * direction.x);
   position.y = position.y + (velocity.y * direction.y);
   position.z = position.z + (velocity.z * direction.z);
   position1.x = position1.x + (velocity1.x * direction1.x);
