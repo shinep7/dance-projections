@@ -1,24 +1,16 @@
 class Image{
 
-  float vy = 0.7;
   PVector position;
   PVector direction;
   PImage img;
 
   Image(String filename) {
-    position = new PVector(0, 0, 0);
-    direction = new PVector(vy*0, -vy, vy*0);
+    position = new PVector(width/2, height/2, 0);
+    direction = new PVector(0, -0.7, 0);
     imageMode(CENTER);
     img = loadImage(filename);
   }
   
-  void mousePressed() {
-    if (vy == 0.7) {
-      vy = 3;
-    } else {
-      vy = 0.7;
-    }
-  }
 
   void display() {
     pushMatrix();
@@ -29,17 +21,23 @@ class Image{
     beginShape();
     texture(img);
 
-    vertex(-200, -200, 0, 0, 0);
-    vertex(200, -200, 0, 1, 0);
-    vertex(200, 200, 0, 1, 1);
-    vertex(-200, 200, 0, 0, 1);
+    float w = 200;
+    float h = w * img.height/img.width;
+    
+
+    vertex(-w, -h, 0, 0, 0);
+    vertex(w, -h, 0, 1, 0);
+    vertex(w, h, 0, 1, 1);
+    vertex(-w, h, 0, 0, 1);
 
     endShape();
 
     popMatrix();
   }
+  
 
   void move() {
     position.add(direction);
   }
+  
 }

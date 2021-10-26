@@ -3,10 +3,14 @@
 //each photo says for like 20 seconds
 //at the end (last 30 seconds of the song), pictures start floating up fast
 
+
+//resize images + rename them
+
 ArrayList<Image> images;
 int gameState = 0;
 
 void setup() {
+
   fullScreen(P3D);
 
   images = new ArrayList<Image>();
@@ -29,73 +33,58 @@ void setup() {
     Image currentimg = images.get(i);
     currentimg.position = new PVector(random(0, width), random(height + i * bandWidth, height + (i + 1) * bandWidth), random(0, 5));
   }
-  
 }
 
 void draw() {
+
   background(0);
 
-  
-    if (gameState == 0) {
-      drawGameState0();
-    } else if (gameState == 1) {
-      drawGameState1();
-    } else if (gameState == 2) {
-      //image1.ending();
-    }
-  
+  if (gameState == 0) {
+    drawGameState0();
+  } else if (gameState == 1) {
+    
+    drawGameState1();
+  } else if (gameState == 2) {
+    //drawGameState1();
+  }
 }
 
 
-void drawGameState0()
-{
+void drawGameState0() {
+
   for (Image i : images) {
-      i.display();
-      i.move();
-      }
+    i.display();
+    i.move();
+  }
 }
 
-void drawGameState1()
-{
-  Image first = images.get(0);
-      first.position.x = width/2;
-      first.position.y = height/2;
-      first.display();
+void setGS1(){
+  Image first = images.get(6);
+
+  first.position.x = width/2;
+  first.position.y = height/2;
+  first.display();
 }
 
+void drawGameState1(){
+
+  Image first = images.get(6);
+  
+  //first.display();
+  //first.position.x = width/2;
+  //first.position.y = height/2;
+  first.move();
+  first.display();
+}
 
 void keyPressed() {
+
   if (keyCode == ' ') {
     gameState++;
+    if (gameState == 1){
+      setGS1();
+    }
   } else {
     gameState = 0;
   }
 }
-
-
-
-  /*void zoom() {
-  }
-
-  void ending() {
-
-    //change speed of the final images so that they're faster
-
-    pushMatrix();
-    translate(image1.position.x, image1.position.y, image1.position.z);
-
-    textureMode(NORMAL);
-
-    beginShape();
-    texture(image1.img);
-
-    vertex(-200, -200, 0, 0, 0);
-    vertex(200, -200, 0, 1, 0);
-    vertex(200, 200, 0, 1, 1);
-    vertex(-200, 200, 0, 0, 1);
-
-    endShape();
-
-    popMatrix();
-  }
-  */
