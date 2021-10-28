@@ -6,6 +6,7 @@
 ArrayList<Image> images;
 int gameState = 0;
 
+
 void setup() {
   fullScreen(P3D);
 
@@ -54,19 +55,7 @@ void keyPressed() {
   }
 }
 
-class Image {
 
-  float vy = 0.7;
-  PVector position;
-  PVector direction;
-  PImage img;
-
-  Image(String filename) {
-    position = new PVector(0, 0, 0);
-    direction = new PVector(vy*0, -vy, vy*0);
-    imageMode(CENTER);
-    img = loadImage(filename);
-  }
 
   void mousePressed() {
     if (vy == 0.7) {
@@ -123,4 +112,3 @@ class Image {
 
     popMatrix();
   }
-}
