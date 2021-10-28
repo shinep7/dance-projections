@@ -7,6 +7,7 @@
 
 ArrayList<Image> images;
 int gameState = 0;
+int currentphoto = 0;
 
 void setup() {
 
@@ -58,7 +59,9 @@ void drawGameState0() {
 }
 
 void setGS1(){
-  Image first = images.get(6);
+  
+  
+  Image first = images.get(currentphoto);
 
   first.position.x = width/2;
   first.position.y = height/2;
@@ -67,7 +70,7 @@ void setGS1(){
 
 void drawGameState1(){
 
-  Image first = images.get(6);
+  Image first = images.get(currentphoto);
   
   //first.display();
   //first.position.x = width/2;
@@ -80,10 +83,16 @@ void keyPressed() {
 
   if (keyCode == ' ') {
     gameState++;
+    
     if (gameState == 1){
       setGS1();
     }
-  } else {
+
+  } else if (key == 'a'){
+    currentphoto = 5;
+    setGS1();
+  } 
+  else {
     gameState = 0;
   }
 }
