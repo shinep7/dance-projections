@@ -8,7 +8,7 @@ class Image {
 
   Image(String filename) {
     position = new PVector(0, 0, 0);
-    direction = new PVector(vy*0, -vy, vy*0);
+    direction = new PVector(0, -vy, 0);
     imageMode(CENTER);
     img = loadImage(filename);
   }
