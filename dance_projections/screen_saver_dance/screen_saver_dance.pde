@@ -3,7 +3,7 @@
 //each photo says for like 20 seconds
 //at the end (last 30 seconds of the song), pictures start floating up fast
 
-//resize images + rename them
+//time element
 
 ArrayList<Image> images;
 int gameState = 0;
@@ -42,7 +42,7 @@ void draw() {
   if (gameState == 0) {
     drawGameState0();
   } else if (gameState == 1) {
-    
+
     drawGameState1();
   } else if (gameState == 2) {
     //drawGameState1();
@@ -58,9 +58,9 @@ void drawGameState0() {
   }
 }
 
-void setGS1(){
-  
-  
+void setGS1() {
+
+
   Image first = images.get(currentphoto);
 
   first.position.x = width/2;
@@ -68,10 +68,10 @@ void setGS1(){
   first.display();
 }
 
-void drawGameState1(){
+void drawGameState1() {
 
   Image first = images.get(currentphoto);
-  
+
   //first.display();
   //first.position.x = width/2;
   //first.position.y = height/2;
@@ -83,16 +83,14 @@ void keyPressed() {
 
   if (keyCode == ' ') {
     gameState++;
-    
-    if (gameState == 1){
+
+    if (gameState == 1) {
       setGS1();
     }
-
-  } else if (key == 'a'){
+  } else if (key == 'a') {
     currentphoto = 5;
     setGS1();
-  } 
-  else {
+  } else {
     gameState = 0;
   }
 }
