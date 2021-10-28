@@ -13,18 +13,18 @@ void setup() {
   fullScreen(P3D);
 
   images = new ArrayList<Image>();
-  images.add(new Image("img1.jpeg"));
-  images.add(new Image("img3.jpeg"));
-  images.add(new Image("img4.jpeg"));
-  images.add(new Image("img5.jpeg"));
-  images.add(new Image("img6.jpeg"));
-  images.add(new Image("img8.jpeg"));
-  images.add(new Image("8th.jpeg"));
-  images.add(new Image("8th(1).jpeg"));
-  images.add(new Image("9th.jpeg"));
-  images.add(new Image("9th(1).jpeg"));
-  images.add(new Image("10th.jpeg"));
-  images.add(new Image("11th.png"));
+  images.add(new Image("image1.jpeg"));
+  images.add(new Image("image3.jpeg"));
+  images.add(new Image("image4.jpeg"));
+  images.add(new Image("image5.jpeg"));
+  images.add(new Image("image6.jpeg"));
+  images.add(new Image("8thgrade.jpeg"));
+  images.add(new Image("8thgrade(1).jpeg"));
+  images.add(new Image("9thgrade.jpeg"));
+  images.add(new Image("9thgrade(1).jpeg"));
+  images.add(new Image("10thgrade(1).jpeg"));
+  images.add(new Image("10thgrade.jpeg"));
+  images.add(new Image("11thgrade.png"));
 
   // loop through images and set position
   int bandWidth = height/2;
