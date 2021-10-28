@@ -3,7 +3,6 @@
 //each photo says for like 20 seconds
 //at the end (last 30 seconds of the song), pictures start floating up fast
 
-
 //resize images + rename them
 
 ArrayList<Image> images;
