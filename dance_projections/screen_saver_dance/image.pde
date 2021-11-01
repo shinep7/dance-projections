@@ -1,0 +1,41 @@
+
+class Image {
+
+  float vy = 0.7;
+  PVector position;
+  PVector direction;
+  PImage img;
+
+  Image(String filename) {
+    position = new PVector(0, 0, 0);
+    direction = new PVector(0, -vy, 0);
+    imageMode(CENTER);
+    img = loadImage(filename);
+  }
+  
+  void display(){
+    pushMatrix();
+    translate(position.x, position.y, position.z);
+    
+    textureMode(NORMAL);
+    
+    beginShape();
+    texture(img);
+    
+    float w = 200;
+    float h = w * img.height/img.width;
+    
+    vertex(-w, -h, 0, 0, 0);
+    vertex(w, -h, 0, 1, 0);
+    vertex(w, h, 0, 1, 1);
+    vertex(-w, h, 0, 0, 1);
+    
+    endShape();
+    
+    popMatrix();
+  }
+  
+  void move(){
+    position.add(direction);
+  }
+}
