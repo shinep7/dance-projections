@@ -6,11 +6,11 @@ class Image {
   PVector direction;
   PImage img;
 
-  Image(String filename) {
+  Image(PImage img) {
     position = new PVector(0, 0, 0);
     direction = new PVector(0, -vy, 0);
     imageMode(CENTER);
-    img = loadImage(filename);
+     this.img = img;
   }
   
   void display(){
