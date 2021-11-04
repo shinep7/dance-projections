@@ -31,31 +31,48 @@ void setup() {
   img11th = loadImage("11thgrade.png");
 
 
-  images.add(new Image(img1));
-  images.add(new Image(img1));
-  images.add(new Image(img1));
+  images.add(new Image(img1)); 
+  images.add(new Image(img10th2));
   images.add(new Image(img2));
+  images.add(new Image(img8th2));
+  images.add(new Image(img3));
+  images.add(new Image(img11th));
+  images.add(new Image(img4));
+  images.add(new Image(img9th2));
+  images.add(new Image(img5));
+  images.add(new Image(img9th));
+  images.add(new Image(img8th));
+  images.add(new Image(img11th));
+  images.add(new Image(img8th2));
+  images.add(new Image(img3));
+  images.add(new Image(img10th));
+  images.add(new Image(img8th));
+  images.add(new Image(img5));
+  images.add(new Image(img8th2));
+  images.add(new Image(img10th2));
+  images.add(new Image(img4));
+  images.add(new Image(img9th));
+  images.add(new Image(img1));
+  images.add(new Image(img9th2));
+  images.add(new Image(img8th));
   images.add(new Image(img2));
+  images.add(new Image(img10th));
+  images.add(new Image(img4));
+  images.add(new Image(img9th));
+  images.add(new Image(img1));
+  images.add(new Image(img10th2));
+  images.add(new Image(img5));
+  images.add(new Image(img3));
+  images.add(new Image(img11th));
+  images.add(new Image(img9th2));
   images.add(new Image(img2));
-  images.add(new Image(img3));
-  images.add(new Image(img3));
-  images.add(new Image(img3));
-  images.add(new Image(img4));
-  images.add(new Image(img4));
-  images.add(new Image(img4));
-  images.add(new Image(img5));
-  images.add(new Image(img5));
-  images.add(new Image(img5));
-  images.add(new Image(img8th));
-  images.add(new Image(img8th));
-  images.add(new Image(img8th));
-  images.add(new Image(img8th2));
-  images.add(new Image(img8th2));
-  images.add(new Image(img8th2));
+  images.add(new Image(img10th));
+  
+  
 
 
   // loop through images and set position
-  int bandWidth = height/2;
+  int bandWidth = height/4;
   for (int i = 0; i < images.size(); i++) {
     Image currentimg = images.get(i);
     currentimg.position = new PVector(random(0, width), random(height + i * bandWidth, height + (i + 1) * bandWidth), random(0, 5));
