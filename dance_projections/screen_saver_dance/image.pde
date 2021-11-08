@@ -1,7 +1,7 @@
 
 class Image {
 
-  float vy = 0.7;
+  float vy = 0.9;
   PVector position;
   PVector direction;
   PImage img;

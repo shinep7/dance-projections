@@ -38,7 +38,6 @@ void setup() {
 
   images.add(new Image(img1));
   images.add(new Image(img10th2));
-  images.add(new Image(img2));
   images.add(new Image(img8th2));
   images.add(new Image(img3));
   images.add(new Image(img4));
@@ -67,13 +66,12 @@ void setup() {
   images.add(new Image(img11th));
   images.add(new Image(img9th2));
   images.add(new Image(img2));
+  images.add(new Image(img2));
   images.add(new Image(img10th));
-
-
 
 
   // loop through images and set position
-  int bandWidth = height/4;
+  int bandWidth = height/3;
   for (int i = 0; i < images.size(); i++) {
     Image currentimg = images.get(i);
     currentimg.position = new PVector(random(0, width), random(height + i * bandWidth, height + (i + 1) * bandWidth), random(0, 5));
@@ -96,7 +94,7 @@ void draw() {
 
 void setGS0(){
   
-  int bandWidth = height/4;
+  int bandWidth = height/2;
   for (int i = 0; i < images.size(); i++) {
     Image currentimg = images.get(i);
     currentimg.position = new PVector(random(0, width), random(height + i * bandWidth, height + (i + 1) * bandWidth), random(0, 5));
@@ -150,4 +148,5 @@ void keyPressed() {
     currentphoto++;
     setGS1();
   }
+  
 }
