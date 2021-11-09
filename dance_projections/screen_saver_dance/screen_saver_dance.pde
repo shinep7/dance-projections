@@ -35,12 +35,12 @@ void setup() {
 
   images.add(new Image(img7th));
   images.add(new Image(img7th2));
-  images.add(new Image(img8th));
+  //images.add(new Image(img8th));
   images.add(new Image(img8th2));
   images.add(new Image(img9th));
   images.add(new Image(img9th2));
   images.add(new Image(img10th));
-  images.add(new Image(img10th2));
+  //images.add(new Image(img10th2));
   images.add(new Image(img11th));
 
   images.add(new Image(img1));
