@@ -32,13 +32,23 @@ void setup() {
   img10th2 = loadImage("10thgrade.jpeg");
   img11th = loadImage("11thgrade.png");
 
-
+  //0-1
   images.add(new Image(img7th));
   images.add(new Image(img7th2));
+  
+  //2-3
+  images.add(new Image(img8th));
   images.add(new Image(img8th2));
+  
+  //4-5
   images.add(new Image(img9th2));
   images.add(new Image(img9th));
+  
+  //6-7
   images.add(new Image(img10th2));
+  images.add(new Image(img10th));
+  
+  //8
   images.add(new Image(img11th));
   
   
@@ -64,7 +74,7 @@ void setup() {
   images.add(new Image(img9th));
   images.add(new Image(img1));
   images.add(new Image(img9th2));
-   images.add(new Image(img7th));
+  images.add(new Image(img7th));
   images.add(new Image(img8th));
   images.add(new Image(img2));
   images.add(new Image(img4));
@@ -132,17 +142,61 @@ void setGS1() {
 
   Image first = images.get(currentphoto);
 
-  first.position.x = width/2;
+  first.position.x = width/2 - 300;
   first.position.y = height/2 + 200;
   first.display();
+  
+  if (currentphoto == 0)
+    setupPartner(1);
+ 
+ if (currentphoto == 2)
+   setupPartner(3);
+   
+  if (currentphoto == 4)
+   setupPartner(5);
+   
+  if (currentphoto == 6)
+   setupPartner(7);
+  
 }
+
+void setupPartner(int i){
+  Image seventh = images.get(i);
+  seventh.position.x = width/2 + 300;
+ seventh.position.y = height/2 + 400;
+ 
+}
+
+void movePartner(int i)
+{
+  Image seventh = images.get(i);  
+  seventh.move();
+  seventh.display(); 
+  
+}
+
 
 void drawGameState1() {
 
   Image first = images.get(currentphoto);
-
+  
   first.move();
   first.display();
+  
+  if (currentphoto == 0)
+      movePartner(1);
+  
+  if (currentphoto == 2)
+      movePartner(3);
+      
+  if (currentphoto == 4)
+      movePartner(5);
+      
+  if (currentphoto == 6)
+      movePartner(7);
+      
+      
+  
 }
 
 void keyPressed() {
@@ -158,6 +212,19 @@ void keyPressed() {
      }
   } else if (key == 'a') {
     currentphoto++;
+    
+    if (currentphoto == 1)
+      currentphoto++; // skip over 8
+    
+    else if (currentphoto == 3)
+      currentphoto++;
+      
+    else if (currentphoto == 5)
+      currentphoto++;
+      
+    else if (currentphoto == 7)
+       currentphoto++;
+      
     setGS1();
   }
   
