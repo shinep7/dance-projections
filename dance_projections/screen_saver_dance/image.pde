@@ -22,7 +22,7 @@ class Image {
     beginShape();
     texture(img);
     
-    float w = 200;
+    float w = 400;
     float h = w * img.height/img.width;
     
     vertex(-w, -h, 0, 0, 0);
