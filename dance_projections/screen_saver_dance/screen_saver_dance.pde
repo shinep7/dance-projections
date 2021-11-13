@@ -144,13 +144,19 @@ void drawGameState0() {
   }
 }
 
+void fasterImages(){
+  for (Image i : images){
+    i.direction.y*=2;
+  }
+}
+
 void setGS1() {
 
 
   Image first = images.get(currentphoto);
 
   first.position.x = width/2 - 400;
-  first.position.y = 400;
+  first.position.y = 200;
   first.display();
   
   if (currentphoto == 0)
@@ -170,7 +176,7 @@ void setGS1() {
 void setupPartner(int i){
   Image seventh = images.get(i);
   seventh.position.x = width/2 + 400;
- seventh.position.y = 400;
+ seventh.position.y = 200;
  
 }
 
@@ -203,7 +209,6 @@ void drawGameState1() {
       movePartner(7);
       
       
-  
 }
 
 void keyPressed() {
@@ -216,6 +221,7 @@ void keyPressed() {
     }
      if (gameState == 3){
        setGS0();
+       fasterImages();
      }
   } else if (key == 'a') {
     currentphoto++;
