@@ -146,7 +146,7 @@ void drawGameState0() {
 
 void fasterImages(){
   for (Image i : images){
-    i.direction.y*=2;
+    i.direction.y*=3;
   }
 }
 
