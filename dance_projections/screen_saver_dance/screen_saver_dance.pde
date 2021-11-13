@@ -112,6 +112,8 @@ void draw() {
   } else if (gameState == 2) {
     drawGameState1();
   } else if (gameState == 3) {
+    if (frameCount % 60 == 0)
+      fasterImages2();
     drawGameState0();
   } else if (gameState == 4){
     background(0);
@@ -144,11 +146,20 @@ void drawGameState0() {
   }
 }
 
-void fasterImages(){
+void fasterImages1(){
   for (Image i : images){
     i.direction.y*=3;
   }
 }
+
+void fasterImages2(){
+  for (Image i : images){
+    if (i.direction.y < 10)
+      i.direction.y*=1.05;
+  }
+}
+
+
 
 void setGS1() {
 
@@ -221,7 +232,7 @@ void keyPressed() {
     }
      if (gameState == 3){
        setGS0();
-       fasterImages();
+       fasterImages1();
      }
   } else if (key == 'a') {
     currentphoto++;
