@@ -105,10 +105,12 @@ void draw() {
   background(0);
 
   if (gameState == 0) {
+    background(0);
+  } else if (gameState == 1){
     drawGameState0();
-  } else if (gameState == 1) {
-    drawGameState1();
   } else if (gameState == 2) {
+    drawGameState1();
+  } else if (gameState == 3) {
     drawGameState0();
   }
 }
@@ -204,10 +206,10 @@ void keyPressed() {
   if (keyCode == ' ') {
     gameState++;
 
-    if (gameState == 1) {
+    if (gameState == 2) {
       setGS1();
     }
-     if (gameState == 2){
+     if (gameState == 3){
        setGS0();
      }
   } else if (key == 'a') {
