@@ -93,10 +93,10 @@ void setup() {
 
 
   // loop through images and set position
-  int bandWidth = height - 400;
+  int bandWidth = height/2;
   for (int i = 0; i < images.size(); i++) {
     Image currentimg = images.get(i);
-    currentimg.position = new PVector(random(300, width-500), -(random(i * bandWidth, (i + 1) * bandWidth)), random(0, 5));
+    currentimg.position = new PVector(random(0, width-300), -(random(i * bandWidth, (i + 1) * bandWidth)), random(0, 5));
  // println(currentimg.position);  
 }
 }
@@ -121,7 +121,7 @@ void draw() {
 
 void setGS0(){
   
-  int bandWidth = height - 400;
+  int bandWidth = height/2;
   for (int i = 0; i < images.size(); i++) {
     Image currentimg = images.get(i);
     
