@@ -17,20 +17,20 @@ void setup() {
 
   images = new ArrayList<Image>();
 
-  img1 = loadImage("image1.jpeg");
-  img2 = loadImage("image3.jpeg");
-  img3 = loadImage("image4.jpeg");
-  img4 = loadImage("image5.jpeg");
-  img5 = loadImage("image6.jpeg");
-  img7th = loadImage("7thgrade.png");
-  img7th2 = loadImage("7thgrade(1).jpeg");
-  img8th = loadImage("8thgrade.jpeg");
-  img8th2 = loadImage("8thgrade(1).jpeg");
-  img9th = loadImage("9thgrade.jpeg");
-  img9th2 = loadImage("9thgrade(1).jpeg");
-  img10th = loadImage("10thgrade(1).jpeg");
-  img10th2 = loadImage("10thgrade.jpeg");
-  img11th = loadImage("11thgrade.png");
+  img1 = loadImage("image1.jpg");
+  img2 = loadImage("image3.jpg");
+  img3 = loadImage("image4.jpg");
+  img4 = loadImage("image5.jpg");
+  img5 = loadImage("image6.jpg");
+  img7th = loadImage("7th.png");
+  img7th2 = loadImage("7th.jpg");
+  img8th = loadImage("8th (2).jpg");
+  img8th2 = loadImage("8th (3).jpg");
+  img9th = loadImage("9th (2).jpg");
+  img9th2 = loadImage("9th (3).jpg");
+  img10th = loadImage("10th (2).jpg");
+  img10th2 = loadImage("10th (3).jpg");
+  img11th = loadImage("11th (1).png");
 
   //0-1
   images.add(new Image(img7th));
