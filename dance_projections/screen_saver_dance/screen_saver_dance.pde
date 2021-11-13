@@ -93,11 +93,12 @@ void setup() {
 
 
   // loop through images and set position
-  int bandWidth = height/4;
+  int bandWidth = height - 400;
   for (int i = 0; i < images.size(); i++) {
     Image currentimg = images.get(i);
-    currentimg.position = new PVector(random(300, width-500), random(height + i * bandWidth, height + (i + 1) * bandWidth), random(0, 5));
-  }
+    currentimg.position = new PVector(random(300, width-500), -(random(i * bandWidth, (i + 1) * bandWidth)), random(0, 5));
+ // println(currentimg.position);  
+}
 }
 
 void draw() {
@@ -112,17 +113,21 @@ void draw() {
     drawGameState1();
   } else if (gameState == 3) {
     drawGameState0();
+  } else if (gameState == 4){
+    background(0);
   }
 }
 
 
 void setGS0(){
   
-  int bandWidth = height/4;
+  int bandWidth = height - 400;
   for (int i = 0; i < images.size(); i++) {
     Image currentimg = images.get(i);
-    currentimg.position = new PVector(random(300, width-500), random(height + i * bandWidth, height + (i + 1) * bandWidth), random(0, 5));
-  }
+    
+    currentimg.position = new PVector(random(300, width-500), -(random(i * bandWidth, (i + 1) * bandWidth)), random(0, 5));
+   //println(currentimg.position);
+}
   
   for (Image i : images){
     i.display();
@@ -144,8 +149,8 @@ void setGS1() {
 
   Image first = images.get(currentphoto);
 
-  first.position.x = width/2 - 300;
-  first.position.y = height/2 + 200;
+  first.position.x = width/2 - 400;
+  first.position.y = 400;
   first.display();
   
   if (currentphoto == 0)
@@ -164,8 +169,8 @@ void setGS1() {
 
 void setupPartner(int i){
   Image seventh = images.get(i);
-  seventh.position.x = width/2 + 300;
- seventh.position.y = height/2 + 400;
+  seventh.position.x = width/2 + 400;
+ seventh.position.y = 400;
  
 }
 
